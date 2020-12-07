@@ -1,0 +1,1 @@
+If you'd like to create a tower replica of one of your favorite airport towers, the Tinkercad nmTOWER housing design is available here - https://www.tinkercad.com/things/ggPbq1SoOyi . Just ungroup and delete/modify any of the objects to create your new tower, then export the STL for printing. Please upload pics of your replicas in the /tower_replicas folder.
