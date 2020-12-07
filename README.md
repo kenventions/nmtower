@@ -1,5 +1,7 @@
 # nmtower
 
+![](pics/nmTower_pic00_desk.jpg)
+
 nmTOWER is an Arduino project that uses ADSBexchange.com data to answer the question "What's near my TOWER?".
 nmTOWER displays data about the nearest aircraft, refreshing the data approx every 30 seconds.
 
@@ -37,6 +39,8 @@ TIPS FOR HOUSING INSTALLATION
 - Once installed, the LCD will have some slight movemment - that's normal
 - Install the ESP32 between the guide posts and secure with the two small screws
 - Connect the micro-USB to boot up your nmTOWER!
+
+If you'd like to create a tower replica of one of your favorite airport towers, the Tinkercad nmTOWER housing design is available here - https://www.tinkercad.com/things/ggPbq1SoOyi . Just ungroup and delete/modify any of the objects to create your new tower, then export the STL for printing. Please upload pics of your replicas in the /tower_replicas folder.
 
 Thanks to all the great Flightaware ADS-B forum members who helped me get started with my first ADS-B receiver and DIY antenna about 18 months ago!
 It's my favorite ADS-B forum!
