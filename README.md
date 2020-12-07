@@ -1,1 +1,45 @@
 # nmtower
+
+nmTOWER is an Arduino project that uses ADSBexchange.com data to answer the question "What's near my TOWER?".
+nmTOWER displays data about the nearest aircraft, refreshing the data approx every 30 seconds.
+
+The nmTOWER requires three electronic components that will cost approx $60 shipped - NO SOLDERING required!
+
+Browse the nmTOWER pics to see the three different pages of aircraft data displayed. If you're interested in building your own nmTOWER, keep reading.
+
+WHAT YOU'LL NEED
+1 - ADS-B receiver already running ADSBx feeder & ADSBx Stats Package, request your API key if you haven't already  
+1 - SparkFun Thing Plus - ESP32 WROOM, WRL-15663
+1 - SparkFun 16x2 SerLCD - RGB Text (Qwiic), LCD-16397
+1 - Qwiic Cable - 100mm or 200mm, PRT-14427 or PRT-14428
+1 - Micro-USB to USB cable
+
+OPTIONAL
+1 - nmTOWER Housing, 3D-printed using 0.35mm layers with 20% infill and supports ON (build plate only), approx 5hrs
+1 - nmTOWER Roof, 3D-printed using 0.35mm layers with 20% infill and NO supports, approx 1hr
+2 - small screws to secure the ESP32 board (2mm x 7mm tall)
+
+BUILD INSTRUCTIONS
+1 - Connect the LCD display to the ESP32 using the Qwiic cable
+2 - Use a micro-USB cable to connect the ESP32 to your PC
+3 - Open the Arduino IDE, under TOOLS, select the "Adafruit ESP32 Feather" board, then select the detected PORT
+4 - Open the nmTower_Program_V1 file and update the USER VARIABLES including your WiFi info and ADSBx API key
+5 - Click the UPLOAD arrow to save your changes and upload the program to your ESP32
+6 - Once the ESP32 reboots and the nmTOWER starts displaying nearby aircraft data, you can close the Arduino IDE
+7 - You can re-locate the nmTOWER - it will auto-reboot when it's plugged back in 
+
+TIPS FOR HOUSING INSTALLATION
+- Remove the three support posts in the nmTOWER window by clipping them at the base of each post
+- The LCD display needs to be carefully installed to avoid snapping the two tension arms
+- First make sure the LCD metal housing is centered in the window opening
+- Slowly work the LCD display down, keeping the display level/square in the window opening
+- There is a resistor on the back right side of the display - the tension arm will need help getting over that resistor
+- Once installed, the LCD will have some slight movemment - that's normal
+- Install the ESP32 between the guide posts and secure with the two small screws
+- Connect the micro-USB to boot up your nmTOWER!
+
+Thanks to all the great Flightaware ADS-B forum members who helped me get started with my first ADS-B receiver and DIY antenna about 18 months ago!
+It's my favorite ADS-B forum!
+
+regards,
+kenf3
