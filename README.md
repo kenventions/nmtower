@@ -8,25 +8,25 @@ The nmTOWER requires three electronic components that will cost approx $60 shipp
 Browse the nmTOWER pics to see the three different pages of aircraft data displayed. If you're interested in building your own nmTOWER, keep reading.
 
 WHAT YOU'LL NEED
-1 - ADS-B receiver already running ADSBx feeder & ADSBx Stats Package, request your API key if you haven't already  
-1 - SparkFun Thing Plus - ESP32 WROOM, WRL-15663
-1 - SparkFun 16x2 SerLCD - RGB Text (Qwiic), LCD-16397
-1 - Qwiic Cable - 100mm or 200mm, PRT-14427 or PRT-14428
-1 - Micro-USB to USB cable
+- ADS-B receiver already running ADSBx feeder & ADSBx Stats Package, request your API key if you haven't already  
+- SparkFun Thing Plus - ESP32 WROOM, WRL-15663
+- SparkFun 16x2 SerLCD - RGB Text (Qwiic), LCD-16397
+- Qwiic Cable - 100mm or 200mm, PRT-14427 or PRT-14428
+- Micro-USB to USB cable
 
 OPTIONAL
-1 - nmTOWER Housing, 3D-printed using 0.35mm layers with 20% infill and supports ON (build plate only), approx 5hrs
-1 - nmTOWER Roof, 3D-printed using 0.35mm layers with 20% infill and NO supports, approx 1hr
-2 - small screws to secure the ESP32 board (2mm x 7mm tall)
+- nmTOWER Housing, 3D-printed using 0.35mm layers with 20% infill and supports ON (build plate only), approx 5hrs
+- nmTOWER Roof, 3D-printed using 0.35mm layers with 20% infill and NO supports, approx 1hr
+- 2 small screws to secure the ESP32 board (2mm x 7mm tall)
 
 BUILD INSTRUCTIONS
-1 - Connect the LCD display to the ESP32 using the Qwiic cable
-2 - Use a micro-USB cable to connect the ESP32 to your PC
-3 - Open the Arduino IDE, under TOOLS, select the "Adafruit ESP32 Feather" board, then select the detected PORT
-4 - Open the nmTower_Program_V1 file and update the USER VARIABLES including your WiFi info and ADSBx API key
-5 - Click the UPLOAD arrow to save your changes and upload the program to your ESP32
-6 - Once the ESP32 reboots and the nmTOWER starts displaying nearby aircraft data, you can close the Arduino IDE
-7 - You can re-locate the nmTOWER - it will auto-reboot when it's plugged back in 
+- Connect the LCD display to the ESP32 using the Qwiic cable
+- Use a micro-USB cable to connect the ESP32 to your PC
+- Open the Arduino IDE, under TOOLS, select the "Adafruit ESP32 Feather" board, then select the detected PORT
+- Open the nmTower_Program_V1 file and update the USER VARIABLES including your WiFi info and ADSBx API key
+- Click the UPLOAD arrow to save your changes and upload the program to your ESP32
+- Once the ESP32 reboots and the nmTOWER starts displaying nearby aircraft data, you can close the Arduino IDE
+- You can re-locate the nmTOWER - it will auto-reboot when it's plugged back in 
 
 TIPS FOR HOUSING INSTALLATION
 - Remove the three support posts in the nmTOWER window by clipping them at the base of each post
