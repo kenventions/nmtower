@@ -1,5 +1,7 @@
 # nmtower
 
+![](pics/nmTower_pic00_desk.jpg)
+
 nmTOWER is an Arduino project that uses ADSBexchange.com data to answer the question "What's near my TOWER?".
 nmTOWER displays data about the nearest aircraft, refreshing the data approx every 30 seconds.
 
