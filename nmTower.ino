@@ -14,7 +14,7 @@ const char* password = "yourWiFiPSWD";
 
 // USER ADSBx "nmTower" Parameters
 // -------------------------------
-const char* adsbxkey = "yourADSBxAPIkeygoeshere";
+const char* adsbxkey = "putyourADSBxkeyhere";
 const int adsbxrange = 10; // search distance in nm (integer)
 const String adsbxlat = "32.897299"; // search origin LAT, using String for better precision in ADSBx URL (vs float)
 const String adsbxlon = "-97.040453"; // search origin LON, using String for better precision in ADSBx URL (vs float)
@@ -138,6 +138,9 @@ void loop() {
 
       if(currList.size()!=0) {
 
+        lcd.setBacklight(200, 170, 255); //Set backlight to bright white
+        lcd.clear();
+
         // Print plane details in serial monitor for debugging
         // for (JsonObject currPlane : currList) {
           //Serial.print(" call- "); Serial.print(currPlane["call"].as<String>());
@@ -226,6 +229,8 @@ void loop() {
         delay(7000);
 
       } else { // no planes in search area
+        lcd.setBacklight(25, 22, 32); //Set backlight to dim white
+        lcd.clear();
         Serial.println("no planes");
         delay(30000);  
       }
