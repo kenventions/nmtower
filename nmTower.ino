@@ -19,9 +19,13 @@ const int adsbxrange = 10; // search distance in nm (integer)
 const String adsbxlat = "32.897299"; // search origin LAT, using String for better precision in ADSBx URL (vs float)
 const String adsbxlon = "-97.040453"; // search origin LON, using String for better precision in ADSBx URL (vs float)
 
-// USER Filter Parameters
-// ----------------------
-const int minspeed = 30; // taxiing planes below this speed will not be displayed 
+// USER Taxi Filter Parameters
+// ---------------------------
+const int minspeed = 30; // taxiing planes below this speed will not be displayed (integer)
+
+// USER Display Dimming Parameters
+// -------------------------------
+const bool dimzero = true; // (true or false) dims the display when no aircraft are detected (crude night dimmer)
 
 // **********************************************
 
@@ -31,6 +35,7 @@ String adsbxurl = "https://adsbexchange.com/api/aircraft/json/lat/" + adsbxlat +
 // initialize LCD display
 #include <SerLCD.h> //Click here to get the library: http://librarymanager/All#SparkFun_SerLCD
 SerLCD lcd; // Initialize the library with default I2C address 0x72
+bool dimmedstate = false;
 
 // initialize JSON settings
 const size_t capacity = 60000;
@@ -112,8 +117,6 @@ void loop() {
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;  //Object of class HTTPClient
 
-    radar();
-
     // Submit adsbx api request
     http.begin(adsbxurl);
     http.addHeader("api-auth", adsbxkey);
@@ -131,15 +134,28 @@ void loop() {
 
       Serial.println("json complete");
 
+      //determine dimming profile
+      if(dimzero==true) {
+        if(currList.size()==0 && dimmedstate==false) {
+          lcd.setBacklight(10, 9, 20); //Set backlight to dim blue
+          lcd.clear();
+          dimmedstate=true;
+        } else {
+            if(currList.size()!=0 && dimmedstate==true) {
+              lcd.setBacklight(200, 170, 255); //Set backlight to bright white
+              lcd.clear();
+              dimmedstate=false;
+            }
+          }
+      }
+
       // display plane count and search distance
+      radar();
       lcd.setCursor(0, 1);
       lcd.print("Planes: " + String(currList.size()) + " <" +String(adsbxrange) +"nm");
       delay(3000);
 
       if(currList.size()!=0) {
-
-        lcd.setBacklight(200, 170, 255); //Set backlight to bright white
-        lcd.clear();
 
         // Print plane details in serial monitor for debugging
         // for (JsonObject currPlane : currList) {
@@ -229,8 +245,6 @@ void loop() {
         delay(7000);
 
       } else { // no planes in search area
-        lcd.setBacklight(25, 22, 32); //Set backlight to dim white
-        lcd.clear();
         Serial.println("no planes");
         delay(30000);  
       }
