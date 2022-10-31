@@ -2,7 +2,7 @@
 
 ![](pics/nmTower_pic00_desk.jpg)
 
-nmTOWER is an Arduino project that originally used ADSBexchange.com data to answer the question "What's near my TOWER?". That ABSBx API is no longer available for free so I'm working on a program update that uses your own DAS-B receiver as the source for nearby aircraft.
+nmTOWER is an Arduino project that originally used ADSBexchange.com data to answer the question "What's near my TOWER?". That ABSBx API is no longer available for free so I'm working on a program update that uses your own ADS-B receiver as the source for nearby aircraft.
 nmTOWER displays data about the nearest aircraft, refreshing the data approx every 30 seconds.
 
 The nmTOWER requires three electronic components that will cost approx $60 shipped - NO SOLDERING required!
